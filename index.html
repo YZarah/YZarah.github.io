@@ -319,41 +319,56 @@
         
           
             <p>Markdown 语法的目标是：成为一种适用于网络的书写语言。<br>Markdown 的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的理念是，能让文档更容易读、写和随意改，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。<br>下面介绍一下markdown经常使用到的语法。</p>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>标题主要有两种写法，一种通过#来实现：通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）,另一种则是通过===和—实现：他们分别表示一级标题和二级标题。</p>
+<p>实现方法如下：</p>
+<pre><code>### 三级标题
+#### 四级标题
+</code></pre><p>另一种实现：</p>
+<pre><code>一级标题
+======
+二级标题
+-------
+</code></pre><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>在我们写作的时候经常需要引用他人的文字，这个时候引用这个格式就很有必要了，在 Markdown 中，你只需要在你希望引用的文字前面加上 &gt; 就好了，例如：</p>
+<pre><code>&gt;一级引用
+&gt;&gt;二级引用
+</code></pre><p>实现效果如下：</p>
+<blockquote>
 <p>一级引用</p>
 <blockquote>
 <p>二级引用</p>
 </blockquote>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">javascript</div><div class="line"></div><div class="line">var canvas = document.getElementById(&quot;canvas&quot;);</div><div class="line"></div><div class="line">var context = canvas.getContext(&quot;2d&quot;);</div></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>需要引用代码时，如果引用的语句只有一段，不分行，可以用`将语句包起来。如果引用的语句为多行，可以将```置于这段代码的首行和末行。多行的代码也可以通过一个tab+4个空格来实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(&quot;canvas&quot;);</div><div class="line">var context = canvas.getContext(&quot;2d&quot;);</div></pre></td></tr></table></figure>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表只需要在文字前面加上-就行了，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- 文本1</div><div class="line">    - 年后</div><div class="line">- 文本2</div><div class="line">- 文本3</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<ul>
+<li>文本1<ul>
+<li>年后</li>
+</ul>
+</li>
+<li>文本2</li>
+<li>文本3</li>
+</ul>
+<p>有序列表只要在文字前面加上序号就行了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 第一条</div><div class="line">2. 第二条</div><div class="line">3. 第三条</div></pre></td></tr></table></figure></p>
+<p>效果如下：</p>
 <ol>
-<li><p>第一条</p>
-</li>
-<li><p>第二条</p>
-</li>
-<li><p>第三条</p>
-</li>
+<li>第一条</li>
+<li>第二条</li>
+<li>第三条</li>
 </ol>
-<ul>
-<li>呵呵<ul>
-<li>嘉嘉</li>
-</ul>
-<ul>
-<li>嘻嘻</li>
-<li>吼吼<ul>
-<li>嘎嘎</li>
-</ul>
-<ul>
-<li>桀桀</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>哈哈</li>
-</ul>
-<p><strong>粗体1</strong> <strong>粗体2</strong><br><em>斜体1</em> <em>斜体2</em></p>
+<h3 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h3><p>Markdown 的粗体和斜体也非常简单， 用两个 <em> 或 _ 包含一段文本就是粗体的语法，用一个 </em> 包含一段文本就是斜体的语法。例如：<br><strong>粗体1</strong> <strong>粗体2</strong><br><em>斜体1</em></p>
+<h3 id="分割线与删除线"><a href="#分割线与删除线" class="headerlink" title="分割线与删除线"></a>分割线与删除线</h3><p>Markdown的分割线实现有多种方式，- - -，***，* * *都能满足需求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">华丽丽的分割线</div></pre></td></tr></table></figure>
+<hr>
+<p>华丽丽的分割线</p>
+<p>删除线只需要用两个~包围文字即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~~这是一条删除线~~</div></pre></td></tr></table></figure>
+<p><del>这是一条删除线</del></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>markdown中表格的实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">|         序号    |    交易名     |    交易说明    |    备注    |</div><div class="line">|    ------:     |    :-------:    |    :---------   |    ------    |</div><div class="line">|    1    |    prfcfg    |    菜单配置    |    可以通过此交易查询到所有交易码和菜单的对应关系    |</div><div class="line">|    2    |    gentmo    |    编译所有交易    |    |</div><div class="line">|    100000    |    sysdba    |    数据库表模型汇总    |    |</div></pre></td></tr></table></figure>
+<p>展示效果如下：</p>
 <table>
 <thead>
 <tr>
@@ -383,19 +398,14 @@
 </tr>
 </tbody>
 </table>
-<hr>
-<p>华丽丽的分割线1</p>
-<hr>
-<p>华丽丽的分割线2</p>
-<hr>
-<p>华丽丽的分割线3</p>
+<h3 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h3><p>在 Markdown 中，插入链接不需要其他按钮，你只需要使用 <a href="链接地址">显示文本</a> 这样的语法即可，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这就是我们常用的地址：[Baidu](www.baidu.com &quot;百度一下，你就知道&quot; )</div></pre></td></tr></table></figure></p>
 <p>这就是我们常用的地址：<a href="www.baidu.com" title="百度一下，你就知道">Baidu</a></p>
-<p><del>这是一条删除线</del></p>
-<p>这是一个注脚测试<a href="这是一个测试，用来阐释注脚。">^footer1</a>。</p>
+<p>插入图片的语法和链接的语法很像，只是前面多了一个 ！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](http://www.nipic.com/show/1/64/8003697k7dc914f7.html)</div></pre></td></tr></table></figure>
+<h3 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h3><p>markdown 中 锚点的实现通过锚点文本+id的方式来实现, 编码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[你好](#jump)</div><div class="line">&lt;span id = &quot;jump&quot;&gt;hehe&lt;/span&gt;</div></pre></td></tr></table></figure>
 <p><a href="#jump">你好</a><br><span id="jump">hehe</span></p>
-<pre><code>var a = b ;
-nihao
-</code></pre>
+
           
         
       
