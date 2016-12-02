@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vim," />
 
 
 
@@ -84,15 +84,40 @@
 
 
 
-<meta name="description" content="与其临渊羡鱼,不如退而结网">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yangdongmei">
-<meta property="og:url" content="http://www.yangdongmei.cn/index.html">
+<meta name="description" content="刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
+vim 主要分为四种模式：
+
+正常模式 (Normal-mode)
+输入模式 (Insert-mode)
+命令模式 (Command-mode)
+视图模式 (Visual-mode)
+
+正常模式正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim四种模式">
+<meta property="og:url" content="http://www.yangdongmei.cn/2016/12/02/vim/vim四种模式/index.html">
 <meta property="og:site_name" content="yangdongmei">
-<meta property="og:description" content="与其临渊羡鱼,不如退而结网">
+<meta property="og:description" content="刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
+vim 主要分为四种模式：
+
+正常模式 (Normal-mode)
+输入模式 (Insert-mode)
+命令模式 (Command-mode)
+视图模式 (Visual-mode)
+
+正常模式正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的">
+<meta property="og:updated_time" content="2016-12-02T08:20:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yangdongmei">
-<meta name="twitter:description" content="与其临渊羡鱼,不如退而结网">
+<meta name="twitter:title" content="vim四种模式">
+<meta name="twitter:description" content="刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
+vim 主要分为四种模式：
+
+正常模式 (Normal-mode)
+输入模式 (Insert-mode)
+命令模式 (Command-mode)
+视图模式 (Visual-mode)
+
+正常模式正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的">
 
 
 
@@ -113,9 +138,9 @@
 
 
 
-  <link rel="canonical" href="http://www.yangdongmei.cn/"/>
+  <link rel="canonical" href="http://www.yangdongmei.cn/2016/12/02/vim/vim四种模式/"/>
 
-  <title> yangdongmei </title>
+  <title> vim四种模式 | yangdongmei </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -225,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -247,10 +270,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/12/02/vim/vim四种模式/" itemprop="url">
-                  vim四种模式
-                </a>
+                vim四种模式
               
             
           </h1>
@@ -316,442 +336,113 @@
       
 
       
-        
-          
-          刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
-vim 主要分为四种模式：
+        <p>刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下</p>
+<p>vim 主要分为四种模式：</p>
+<ul>
+<li>正常模式 (Normal-mode)</li>
+<li>输入模式 (Insert-mode)</li>
+<li>命令模式 (Command-mode)</li>
+<li>视图模式 (Visual-mode)</li>
+</ul>
+<h3 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h3><p>正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的字符。</p>
+<p>在这个模式下，我们可能通过键盘在文本中跳来跳去，跳动的范围从小到大是字符、单词、行、句子、段落和屏幕</p>
+<p>启动vim后默认位于正常模式。不论位于什么模式，按下<esc>键(有时需要按两下）都会进入正常模式。</esc></p>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>在正常模式中按下i, I, a, A等键（后面系列文章会详细介绍），会进入插入模式。插入模式中，击键时会写入相应的字符。</p>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>在正常模式中，按下：（冒号）键，会进入命令模式。在命令模式中可以执行一些输入并执行一些vim或插件提供的指令，就像在shell里一样。这些指令包括设置环境、文件操作、调用某个功能等等。</p>
+<h3 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h3><p>在正常模式按下v, V, <ctrl>+v，可以进入可视模式。可视模式中的操作有点像拿鼠标进行操作，选择文本的时候有一种鼠标选择的即视感，有时候会很方便。</ctrl></p>
+<h3 id="配置回到正常模式的快捷键"><a href="#配置回到正常模式的快捷键" class="headerlink" title="配置回到正常模式的快捷键"></a>配置回到正常模式的快捷键</h3><p>由于不论在其他什么模式下，按一次或两次<esc>键都可以回到正常模式，我们可以想见，<esc>键会经常用到。由于<esc>键在标准qwert键盘的左上角，对于左手小指不灵活的朋友来说，按起来比较不方便，所以我们可以通过修改~/.vimrc文件中的配置将<esc>映射成了按两下j键。</esc></esc></esc></esc></p>
+<p><code>inoremap jj &lt;Esc&gt;</code></p>
 
-正常模式 (Normal-mode)
-输入模式 (Insert-mode)
-命令模式 (Command-mode)
-视图模式 (Visual-mode)
-
-正常模式正常模式一般用于浏览
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/02/vim/vim四种模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/30/javascript/RegExp/" itemprop="url">
-                  正则表达式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T11:22:39+08:00" content="2016-09-30">
-              2016-09-30
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/30/javascript/RegExp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/javascript/RegExp/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/vim/" rel="tag">#vim</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-转载： http://www.php100.com/html/it/biancheng/2015/0320/8825.html
-
-RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attributes。attributes有三个选择，i、m和g，m（多行匹配）不常用直接
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/30/javascript/RegExp/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/30/javascript/RegExp/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/29/others/如何写一篇好的技术博客/" itemprop="url">
-                  如何写一篇好的技术博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-29T11:05:21+08:00" content="2016-09-29">
-              2016-09-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/others/" itemprop="url" rel="index">
-                    <span itemprop="name">others</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/29/others/如何写一篇好的技术博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/29/others/如何写一篇好的技术博客/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-转载：http://blog.jobbole.com/53068/
-
-在工作过程中，发现对很多东西都一知半解，不是很透彻，到头来很容易模糊，如果有一篇好的技术博客予以总结，一来即使忘记了，回过头来再看，仍然能够从自己的思路中恢复；二来总结一下，还会发现一些潜在问题；三来，有利于大家交流技术。很多大
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/29/others/如何写一篇好的技术博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/12/02/vim/vim四种模式/"
+     data-title="vim四种模式"
+     data-content=""
+     data-url="http://www.yangdongmei.cn/2016/12/02/vim/vim四种模式/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/23/markdown/base/" itemprop="url">
-                  markdown基本语法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-23T15:18:33+08:00" content="2016-09-23">
-              2016-09-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/23/markdown/base/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/markdown/base/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Markdown 语法的目标是：成为一种适用于网络的书写语言。Markdown 的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的理念是，能让文档更容易读、写和随意改，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。下面介绍一下markdown经常使用到的语法。
-标题标题
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/23/markdown/base/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/02/vim/vim四种模式/"
+           data-title="vim四种模式" data-url="http://www.yangdongmei.cn/2016/12/02/vim/vim四种模式/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -771,8 +462,17 @@ RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attribu
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -833,6 +533,17 @@ RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attribu
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正常模式"><span class="nav-number">1.</span> <span class="nav-text">正常模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模式"><span class="nav-number">2.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式"><span class="nav-number">3.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视模式"><span class="nav-number">4.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置回到正常模式的快捷键"><span class="nav-number">5.</span> <span class="nav-text">配置回到正常模式的快捷键</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -929,6 +640,10 @@ RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attribu
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
