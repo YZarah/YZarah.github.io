@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="正则表达式,RegExp," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="转载： http://www.php100.com/html/it/biancheng/2015/0320/8825.html
+
+RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attributes。attributes有三个选择，i、m和g，m（多行匹配）不常用直接省略，所以一个pattern（匹配模式）可以表示如下：1var pattern = /hello/i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://www.yangdongmei.cn/2016/09/30/javascript/RegExp/index.html">
+<meta property="og:site_name" content="yangdongmei">
+<meta property="og:description" content="转载： http://www.php100.com/html/it/biancheng/2015/0320/8825.html
+
+RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attributes。attributes有三个选择，i、m和g，m（多行匹配）不常用直接省略，所以一个pattern（匹配模式）可以表示如下：1var pattern = /hello/i">
+<meta property="og:updated_time" content="2016-09-30T03:47:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="转载： http://www.php100.com/html/it/biancheng/2015/0320/8825.html
+
+RegExp 三大方法本文的RegExp采用直接量语法表示：/pattern/attributes。attributes有三个选择，i、m和g，m（多行匹配）不常用直接省略，所以一个pattern（匹配模式）可以表示如下：1var pattern = /hello/i">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6333411544432379000,
+      author: '主编大人'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.yangdongmei.cn/2016/09/30/javascript/RegExp/"/>
+
+  <title> 正则表达式 | yangdongmei </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">yangdongmei</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                正则表达式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T11:22:39+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/javascript/RegExp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/javascript/RegExp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>转载： <a href="http://www.php100.com/html/it/biancheng/2015/0320/8825.html" target="_blank" rel="external">http://www.php100.com/html/it/biancheng/2015/0320/8825.html</a></p>
+</blockquote>
+<h3 id="RegExp-三大方法"><a href="#RegExp-三大方法" class="headerlink" title="RegExp 三大方法"></a>RegExp 三大方法</h3><p>本文的RegExp采用直接量语法表示：/pattern/attributes。attributes有三个选择，i、m和g，m（多行匹配）不常用直接省略，所以一个pattern（匹配模式）可以表示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var pattern = /hello/ig;</div></pre></td></tr></table></figure></p>
+<p>i（ignore）表示不区分大小写（搜索匹配），比较简单，以下例子中不加述说；g（global）表示全局（搜索匹配，即找到一个后继续找下去，相对复杂，以下各种方法中会特别介绍。<br>既然是RegExp的三大方法，所以都是pattern.test/exec/complie的格式。</p>
+<h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><p>主要功能：检测指定字符串是否含有某个子串（或者匹配模式），返回true或者false。<br>示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">var pattern = /you/;</div><div class="line">var ans = pattern.test(s);</div><div class="line">console.log(ans); // true</div></pre></td></tr></table></figure></p>
+<p>如果attributes用了g，则可以继续找下去，其中还会涉及lastIndex属性（参照exec中搭配g的介绍）。</p>
+<h4 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h4><p>主要功能：提取指定字符串中的符合要求的子串（或者匹配模式），返回一个数组存放匹配结果；如果没有，则返回null。（也可自己写方法循环提取所有或者指定index的数据）<br>exec可以说是test的升级版本，因为它不仅可以检测，而且检测到了可以直接提取结果。<br>示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">var pattern = /you/;</div><div class="line">var ans = pattern.exec(s);</div><div class="line">console.log(ans); // [&quot;you&quot;, index: 0, input: &quot;you love me and I love you&quot;]</div><div class="line">console.log(ans.index); // 0</div><div class="line">console.log(ans.input); // you love me and I love you</div></pre></td></tr></table></figure></p>
+<p>输出的东西很有意思。此数组的第0个元素是与正则表达式相匹配的文本，第1个元素是与 RegExpObject 的第 1 个子表达式相匹配的文本（如果有的话），第 2 个元素是与 RegExpObject 的第 2 个子表达式相匹配的文本（如果有的话），以此类推。<br>啥叫“与子表达式相匹配的文本”？看下面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">var pattern = /y(o?)u/;</div><div class="line">var ans = pattern.exec(s);</div><div class="line">console.log(ans);   // [&quot;you&quot;, &quot;o&quot;, index: 0, input: &quot;you love me and I love you&quot;]</div><div class="line">console.log(ans.length) // 2</div></pre></td></tr></table></figure>
+<p>所谓的子表达式就是pattern里（）内的东西（具体可以参考下文对子表达式的介绍）。再看上面例子的数组长度，是2！！index和input只是数组属性（chrome中以上的输出可能会让人误会）。</p>
+<p>除了数组元素和 length 属性之外，exec() 方法还返回两个属性。index 属性声明的是匹配文本的第一个字符的位置。input 属性则存放的是被检索的字符串 string。我们可以看得出，在调用非全局的 RegExp 对象的 exec() 方法时，返回的数组与调用方法 String.match() 返回的数组是相同的。</p>
+<p>如果使用 “g” 参数，exec() 的工作原理如下（还是以上的例子 ps：如果test使用g参数类似）：</p>
+<ol>
+<li>找到第一个 “you”，并存储其位置</li>
+<li>如果再次运行 exec()，则从存储的位置（lastIndex）开始检索，并找到下一个 “you”，并存储其位置</li>
+</ol>
+<p>这就是说，我们可以通过反复调用 exec() 方法来遍历字符串中的所有匹配文本。当 exec() 再也找不到匹配的文本时，它将返回 null，并把 lastIndex 属性重置为 0。这里引入lastIndex属性，这货只有跟g和test（或者g和exec）三者搭配时才有作用。它是pattern的一个属性，一个整数，标示开始下一次匹配的字符位置。</p>
+<p>示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">var pattern = /you/g;</div><div class="line">var ans;</div><div class="line">do &#123;</div><div class="line">  ans = pattern.exec(s);</div><div class="line">  console.log(ans);</div><div class="line">  console.log(pattern.lastIndex);</div><div class="line">&#125;</div><div class="line">while (ans !== null)</div></pre></td></tr></table></figure></p>
+<h4 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h4><p>主要功能：改变当前匹配模式（pattern）<br>这货是改变匹配模式时用的，用处不大，略过。详见JavaScript compile() 方法</p>
+<h3 id="String-四大护法"><a href="#String-四大护法" class="headerlink" title="String 四大护法"></a>String 四大护法</h3><p>和RegExp三大方法分庭抗礼的是String的四大护法，四大护法有些和RegExp三大方法类似，有的更胜一筹。<br>既然是String家族下的四大护法，所以肯定是string在前，即str.search/match/replace/split形式。<br>既然是String的方法，当然参数可以只用字符串而不用pattern。</p>
+<h4 id="search"><a href="#search" class="headerlink" title="search"></a>search</h4><p>主要功能：搜索指定字符串中是否含有某子串（或者匹配模式），如有，返回子串在原串中的初始位置，如没有，返回-1。<br>是不是和test类似呢？test只能判断有木有，search还能返回位置！当然test()如果有需要能继续找下去，而search则会自动忽略g（如果有的话）。<br>示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">var pattern = /you/;</div><div class="line">var ans = s.search(pattern);</div><div class="line">console.log(ans);  // 0</div></pre></td></tr></table></figure></p>
+<p>话说和String的indexOf方法有点相似，不同的是indexOf方法可以从指定位置开始查找，但是不支持正则。</p>
+<h4 id="match"><a href="#match" class="headerlink" title="match"></a>match</h4><p>主要功能：和exec类似，从指定字符串中查找子串或者匹配模式，找到返回数组，没找到返回null<br>match是exec的轻量版，当不使用全局模式匹配时，match和exec返回结果一致；当使用全局模式匹配时，match直接返回一个字符串数组，获得的信息远没有exec多，但是使用方式简单。</p>
+<p>示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">console.log(s.match(/you/));    // [&quot;you&quot;, index: 0, input: &quot;you love me and I love you&quot;]</div><div class="line">console.log(s.match(/you/g));   // [&quot;you&quot;, &quot;you&quot;]</div></pre></td></tr></table></figure></p>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h4><p>主要功能：用另一个子串替换指定字符串中的某子串（或者匹配模式），返回替换后的新的字符串  str.replace(‘搜索模式’,’替换的内容’)  如果用的是pattern并且带g，则全部替换；否则替换第一处。</p>
+<p>示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var s = &apos;you love me and I love you&apos;;</div><div class="line">console.log(s.replace(&apos;you&apos;, &apos;zichi&apos;)); // zichi love me and I love you</div><div class="line">console.log(s.replace(/you/, &apos;zichi&apos;)); // zichi love me and I love you</div><div class="line">console.log(s.replace(/you/g, &apos;zichi&apos;));    // zichi love me and I love zichi</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/正则表达式/" rel="tag">#正则表达式</a>
+          
+            <a href="/tags/RegExp/" rel="tag">#RegExp</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/29/others/如何写一篇好的技术博客/" rel="next" title="如何写一篇好的技术博客">
+                <i class="fa fa-chevron-left"></i> 如何写一篇好的技术博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/30/javascript/RegExp/"
+     data-title="正则表达式"
+     data-content=""
+     data-url="http://www.yangdongmei.cn/2016/09/30/javascript/RegExp/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/30/javascript/RegExp/"
+           data-title="正则表达式" data-url="http://www.yangdongmei.cn/2016/09/30/javascript/RegExp/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Dongmei Yang" />
+          <p class="site-author-name" itemprop="name">Dongmei Yang</p>
+          <p class="site-description motion-element" itemprop="description">与其临渊羡鱼,不如退而结网</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/YZarah/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-三大方法"><span class="nav-number">1.</span> <span class="nav-text">RegExp 三大方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#test"><span class="nav-number">1.1.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exec"><span class="nav-number">1.2.</span> <span class="nav-text">exec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#compile"><span class="nav-number">1.3.</span> <span class="nav-text">compile</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-四大护法"><span class="nav-number">2.</span> <span class="nav-text">String 四大护法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#search"><span class="nav-number">2.1.</span> <span class="nav-text">search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#match"><span class="nav-number">2.2.</span> <span class="nav-text">match</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace"><span class="nav-number">2.3.</span> <span class="nav-text">replace</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dongmei Yang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yangdongmei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
