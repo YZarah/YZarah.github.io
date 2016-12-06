@@ -84,40 +84,25 @@
 
 
 
-<meta name="description" content="刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
-vim 主要分为四种模式：
-
-正常模式 (Normal-mode)
-输入模式 (Insert-mode)
-命令模式 (Command-mode)
-视图模式 (Visual-mode)
-
-正常模式正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的">
+<meta name="description" content="说起配置Vim，首先要知道三个配置文件：vimrc，gvimrc和exrc。这些配置文件的位置油Vim的安装位置和操作系统决定。
+vimrcvimrc是Vim最主要的配置文件，它有两个版本：全局版本（global）和用户版本（personal）。
+全局vimrc文件在Vim的安装目录中，我的电脑是Mac，所以其路径是/usr/share/vim/vimrc
+用户版本的vimrc文件在当前用户的主目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim四种模式">
-<meta property="og:url" content="http://www.yangdongmei.cn/2016/12/02/vim/Vim四种模式/index.html">
+<meta property="og:title" content="Vim配置">
+<meta property="og:url" content="http://www.yangdongmei.cn/2016/12/02/vim/Vim配置/index.html">
 <meta property="og:site_name" content="yangdongmei">
-<meta property="og:description" content="刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
-vim 主要分为四种模式：
-
-正常模式 (Normal-mode)
-输入模式 (Insert-mode)
-命令模式 (Command-mode)
-视图模式 (Visual-mode)
-
-正常模式正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的">
-<meta property="og:updated_time" content="2016-12-05T11:52:23.000Z">
+<meta property="og:description" content="说起配置Vim，首先要知道三个配置文件：vimrc，gvimrc和exrc。这些配置文件的位置油Vim的安装位置和操作系统决定。
+vimrcvimrc是Vim最主要的配置文件，它有两个版本：全局版本（global）和用户版本（personal）。
+全局vimrc文件在Vim的安装目录中，我的电脑是Mac，所以其路径是/usr/share/vim/vimrc
+用户版本的vimrc文件在当前用户的主目">
+<meta property="og:updated_time" content="2016-12-05T11:52:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim四种模式">
-<meta name="twitter:description" content="刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下
-vim 主要分为四种模式：
-
-正常模式 (Normal-mode)
-输入模式 (Insert-mode)
-命令模式 (Command-mode)
-视图模式 (Visual-mode)
-
-正常模式正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的">
+<meta name="twitter:title" content="Vim配置">
+<meta name="twitter:description" content="说起配置Vim，首先要知道三个配置文件：vimrc，gvimrc和exrc。这些配置文件的位置油Vim的安装位置和操作系统决定。
+vimrcvimrc是Vim最主要的配置文件，它有两个版本：全局版本（global）和用户版本（personal）。
+全局vimrc文件在Vim的安装目录中，我的电脑是Mac，所以其路径是/usr/share/vim/vimrc
+用户版本的vimrc文件在当前用户的主目">
 
 
 
@@ -138,9 +123,9 @@ vim 主要分为四种模式：
 
 
 
-  <link rel="canonical" href="http://www.yangdongmei.cn/2016/12/02/vim/Vim四种模式/"/>
+  <link rel="canonical" href="http://www.yangdongmei.cn/2016/12/02/vim/Vim配置/"/>
 
-  <title> Vim四种模式 | yangdongmei </title>
+  <title> Vim配置 | yangdongmei </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +255,7 @@ vim 主要分为四种模式：
             
             
               
-                Vim四种模式
+                Vim配置
               
             
           </h1>
@@ -282,7 +267,7 @@ vim 主要分为四种模式：
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-02T16:07:25+08:00" content="2016-12-02">
+            <time itemprop="dateCreated" datetime="2016-12-02T16:27:55+08:00" content="2016-12-02">
               2016-12-02
             </time>
           </span>
@@ -312,8 +297,8 @@ vim 主要分为四种模式：
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/02/vim/Vim四种模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/02/vim/Vim四种模式/" itemprop="commentsCount"></span>
+                <a href="/2016/12/02/vim/Vim配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/02/vim/Vim配置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -336,22 +321,14 @@ vim 主要分为四种模式：
       
 
       
-        <p>刚刚接触vim, 对于vim的四种模式的作用以及切换不是很清楚，所以便于记忆整理如下</p>
-<p>vim 主要分为四种模式：</p>
-<ul>
-<li>正常模式 (Normal-mode)</li>
-<li>输入模式 (Insert-mode)</li>
-<li>命令模式 (Command-mode)</li>
-<li>视图模式 (Visual-mode)</li>
-</ul>
-<h3 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h3><p>正常模式一般用于浏览文件，也包括一些复制、粘贴、删除等操作。这时击键时，一般的键/键组合会被当成功能键，而不会键入对应的字符。</p>
-<p>在这个模式下，我们可能通过键盘在文本中跳来跳去，跳动的范围从小到大是字符、单词、行、句子、段落和屏幕</p>
-<p>启动vim后默认位于正常模式。不论位于什么模式，按下<esc>键(有时需要按两下）都会进入正常模式。</esc></p>
-<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>在正常模式中按下i, I, a, A等键（后面系列文章会详细介绍），会进入插入模式。插入模式中，击键时会写入相应的字符。</p>
-<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>在正常模式中，按下：（冒号）键，会进入命令模式。在命令模式中可以执行一些输入并执行一些vim或插件提供的指令，就像在shell里一样。这些指令包括设置环境、文件操作、调用某个功能等等。</p>
-<h3 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h3><p>在正常模式按下v, V, <ctrl>+v，可以进入可视模式。可视模式中的操作有点像拿鼠标进行操作，选择文本的时候有一种鼠标选择的即视感，有时候会很方便。</ctrl></p>
-<h3 id="配置回到正常模式的快捷键"><a href="#配置回到正常模式的快捷键" class="headerlink" title="配置回到正常模式的快捷键"></a>配置回到正常模式的快捷键</h3><p>由于不论在其他什么模式下，按一次或两次<esc>键都可以回到正常模式，我们可以想见，<esc>键会经常用到。由于<esc>键在标准qwert键盘的左上角，对于左手小指不灵活的朋友来说，按起来比较不方便，所以我们可以通过修改~/.vimrc文件中的配置将<esc>映射成了按两下j键。</esc></esc></esc></esc></p>
-<p><code>inoremap jj &lt;Esc&gt;</code></p>
+        <p>说起配置Vim，首先要知道三个配置文件：vimrc，gvimrc和exrc。这些配置文件的位置油Vim的安装位置和操作系统决定。</p>
+<h3 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h3><p>vimrc是Vim最主要的配置文件，它有两个版本：全局版本（global）和用户版本（personal）。</p>
+<p>全局vimrc文件在Vim的安装目录中，我的电脑是Mac，所以其路径是/usr/share/vim/vimrc</p>
+<p>用户版本的vimrc文件在当前用户的主目录下，主目录的位置依赖于操作系统。Mac下的用户vimrc文件路径为：/Users/用户名/.vimrc  但是Mac下默认是没有用户vimrc的，所以需要你自己创建一个</p>
+<p>不管怎么改用户版的vimrc文件，其中的内容都是是覆盖在全局vimrc文件中设置的内容，这就意味着你可以不需要去改变全局vimrc文件来进行配置vim，只需要修改用户vimrc文件。</p>
+<h3 id="gvimrc"><a href="#gvimrc" class="headerlink" title="gvimrc"></a>gvimrc</h3><p>gvimrc文件是Gvim的配置文件，和vimrc很相似，并且是放在同一个目录下的，也分为全局版和用户版。这个文件是用来设置只有Gvim才能使用的GUI设置。我没有用Gvim，所以就不细说了</p>
+<h3 id="exrc"><a href="#exrc" class="headerlink" title="exrc"></a>exrc</h3><p>exrc文件是用作与vi或ex向后兼容的，它也和vimrc放在同一个目录，当然也分全局版和用户版。然而，除非你想用vi兼容的模式来使用Vim，否则你更本不会用到这个文件。当然一般人都不会用vi兼容模式来使用Vim的。</p>
+<h3 id="配置自己喜欢的Vim"><a href="#配置自己喜欢的Vim" class="headerlink" title="配置自己喜欢的Vim"></a>配置自己喜欢的Vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">set nocompatible &quot; 关闭 vi 兼容模式</div><div class="line">syntax on &quot; 自动语法高亮</div><div class="line">colorscheme molokai &quot; 设定配色方案</div><div class="line">set number &quot; 显示行号</div><div class="line">set cursorline &quot; 突出显示当前行</div><div class="line">set ruler &quot; 打开状态栏标尺</div><div class="line">set shiftwidth=4 &quot; 设定 &lt;&lt; 和 &gt;&gt; 命令移动时的宽度为 4</div><div class="line">set softtabstop=4 &quot; 使得按退格键时可以一次删掉 4 个空格</div><div class="line">set tabstop=4 &quot; 设定 tab 长度为 4</div><div class="line">set nobackup &quot; 覆盖文件时不备份</div><div class="line">set autochdir &quot; 自动切换当前目录为当前文件所在的目录</div><div class="line">filetype plugin indent on &quot; 开启插件</div><div class="line">set backupcopy=yes &quot; 设置备份时的行为为覆盖</div><div class="line">set ignorecase smartcase &quot; 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感</div><div class="line">set nowrapscan &quot; 禁止在搜索到文件两端时重新搜索</div><div class="line">set incsearch &quot; 输入搜索内容时就显示搜索结果</div><div class="line">set hlsearch &quot; 搜索时高亮显示被找到的文本</div><div class="line">set noerrorbells &quot; 关闭错误信息响铃</div><div class="line">set novisualbell &quot; 关闭使用可视响铃代替呼叫</div><div class="line">set t_vb= &quot; 置空错误铃声的终端代码</div><div class="line">&quot; set showmatch &quot; 插入括号时，短暂地跳转到匹配的对应括号</div><div class="line">&quot; set matchtime=2 &quot; 短暂跳转到匹配括号的时间</div><div class="line">set magic &quot; 设置魔术</div><div class="line">set hidden &quot; 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存</div><div class="line">set guioptions-=T &quot; 隐藏工具栏</div><div class="line">set guioptions-=m &quot; 隐藏菜单栏</div><div class="line">set smartindent &quot; 开启新行时使用智能自动缩进</div><div class="line">set backspace=indent,eol,start</div><div class="line">&quot; 不设定在插入状态无法用退格键和 Delete 键删除回车符</div><div class="line">set cmdheight=1 &quot; 设定命令行的行数为 1</div><div class="line">set laststatus=2 &quot; 显示状态栏 (默认值为 1, 无法显示状态栏)</div><div class="line">set statusline=\ %&lt;%F[%1*%M%*%n%R%H]%=\ %y\ %0(%&#123;&amp;fileformat&#125;\ %&#123;&amp;encoding&#125;\ %c:%l/%L%)\</div><div class="line">&quot; 设置在状态行显示的信息</div><div class="line">set foldenable &quot; 开始折叠</div><div class="line">set foldmethod=syntax &quot; 设置语法折叠</div><div class="line">set foldcolumn=0 &quot; 设置折叠区域的宽度</div><div class="line">setlocal foldlevel=1 &quot; 设置折叠层数为</div><div class="line">&quot; set foldclose=all &quot; 设置为自动关闭折叠</div><div class="line">&quot; nnoremap &lt;space&gt; @=((foldclosed(line(&apos;.&apos;)) &lt; 0) ? &apos;zc&apos; : &apos;zo&apos;)&lt;CR&gt;</div><div class="line">&quot; 用空格键来开关折叠</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -383,16 +360,16 @@ vim 主要分为四种模式：
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/30/javascript/RegExp/" rel="next" title="正则表达式">
-                <i class="fa fa-chevron-left"></i> 正则表达式
+              <a href="/2016/12/02/vim/Vim四种模式/" rel="next" title="Vim四种模式">
+                <i class="fa fa-chevron-left"></i> Vim四种模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/02/vim/Vim配置/" rel="prev" title="Vim配置">
-                Vim配置 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/02/vim/Vim快捷键/" rel="prev" title="Vim快捷键">
+                Vim快捷键 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -408,10 +385,10 @@ vim 主要分为四种模式：
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/12/02/vim/Vim四种模式/"
-     data-title="Vim四种模式"
+        <div class="ds-share flat" data-thread-key="2016/12/02/vim/Vim配置/"
+     data-title="Vim配置"
      data-content=""
-     data-url="http://www.yangdongmei.cn/2016/12/02/vim/Vim四种模式/">
+     data-url="http://www.yangdongmei.cn/2016/12/02/vim/Vim配置/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -441,8 +418,8 @@ vim 主要分为四种模式：
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/02/vim/Vim四种模式/"
-           data-title="Vim四种模式" data-url="http://www.yangdongmei.cn/2016/12/02/vim/Vim四种模式/">
+      <div class="ds-thread" data-thread-key="2016/12/02/vim/Vim配置/"
+           data-title="Vim配置" data-url="http://www.yangdongmei.cn/2016/12/02/vim/Vim配置/">
       </div>
     
   </div>
@@ -544,7 +521,7 @@ vim 主要分为四种模式：
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正常模式"><span class="nav-number">1.</span> <span class="nav-text">正常模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模式"><span class="nav-number">2.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式"><span class="nav-number">3.</span> <span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视模式"><span class="nav-number">4.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置回到正常模式的快捷键"><span class="nav-number">5.</span> <span class="nav-text">配置回到正常模式的快捷键</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vimrc"><span class="nav-number">1.</span> <span class="nav-text">vimrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gvimrc"><span class="nav-number">2.</span> <span class="nav-text">gvimrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exrc"><span class="nav-number">3.</span> <span class="nav-text">exrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置自己喜欢的Vim"><span class="nav-number">4.</span> <span class="nav-text">配置自己喜欢的Vim</span></a></li></ol></div>
             
           </div>
         </section>
